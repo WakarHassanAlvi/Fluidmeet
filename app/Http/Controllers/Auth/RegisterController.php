@@ -71,12 +71,10 @@ class RegisterController extends Controller
         ]);
         
         //For first user registeration, the role will be assigned 'Admin'. 
-        //Uncomment and Execute the below command to assign 'Admin' Role to First Registered User.
-        //$user->roles()->attach(1);
+        $user->roles()->attach(1);
 
-        //By default, all the registered users will be assigned the role 'Client'
-        //The below command assigns each registering user the role 'Client'.
-        $user->roles()->attach(2);
+        //The below command assigns each registering user the role 'Client'. So change the above command to below after registering First User:
+        //$user->roles()->attach(2);
 
         return $user;
     }
